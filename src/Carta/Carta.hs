@@ -1,9 +1,10 @@
 module Carta.Carta(
-    geraBaralho,
-    Carta
+    geraBaralho
+    ,Carta
     ,getValue
     ,isHidden
     ,isFound
+    ,atualizaBaralho
     ) where
 
 data Carta = Carta{
@@ -13,11 +14,11 @@ data Carta = Carta{
 } deriving Show
 
 viraCarta::Carta -> Carta
-viraCarta c = do 
+viraCarta c = do
     geraCarta (getValue c) (isFound c) (not (isHidden c))
 
 achaCarta::Carta -> Carta
-achaCarta c = do 
+achaCarta c = do
     geraCarta (getValue c) (not (isFound c)) (isHidden c)
 
 getValue :: Carta -> Int
@@ -39,3 +40,14 @@ geraBaralho n baralho = do
     then do
         geraBaralho (n-1) baralho++[geraCarta n True False]
     else baralho
+
+atualizaBaralho :: Int -> Int -> [Carta] -> [Carta] -> [Carta]
+atualizaBaralho y n baralho novo_baralho = do
+    if n < length baralho 
+    then do
+        if n == y
+        then
+            atualizaBaralho y (n+1) baralho (novo_baralho ++ [viraCarta (baralho !! n)])
+        else
+            atualizaBaralho  y (n+1) baralho (novo_baralho ++ [baralho !! n])
+    else novo_baralho

@@ -1,9 +1,9 @@
 module Tabuleiro.Tabuleiro(
-    geraTabuleiro,
-    desenhaTabuleiro,
-    pegaCoordenada,
-    Coordenada,
-    Jogada
+    geraTabuleiro
+    ,desenhaTabuleiro
+    ,pegaCoordenada
+    ,pegaCarta
+    ,Coordenada
     ) where
 
 import Carta.Carta (
@@ -11,21 +11,26 @@ import Carta.Carta (
     ,isFound
     ,isHidden
     ,getValue
+    ,atualizaBaralho
     )
 import Data.Char(
-    toUpper,
-    digitToInt,
-    ord,
-    chr
+    toUpper
+    ,digitToInt
+    ,ord
+    ,chr
     )
+import Data.Binary.Put (putInt8)
 
-data Coordenada = Coordenada Int Int
+data Coordenada = Coordenada {
+    x :: Int,
+    y :: Int
+} deriving Show
 
-data Jogada = Jogada{
-    carta  :: Carta,
-    tabuleiro :: [[Carta]]
-}
+getX :: Coordenada -> Int
+getX = x
 
+getY :: Coordenada -> Int
+getY = y
 -- TODO ambaralhaCarta
 embaralhaCarta :: [Carta] -> [Carta]
 embaralhaCarta baralho = baralho
@@ -41,14 +46,16 @@ printCarta carta = do
     then do
         if isHidden c
         then putStr " *"
-        else print (getValue c)
+        else do
+            putStr " "
+            putStr . unwords . map show $ [getValue c]
     else putStr "  "
 
 
 printLinha :: Int -> [[Carta]] -> IO ()
 printLinha n tabuleiro = do
-    if n < length (head tabuleiro) - 1
-    then do 
+    if n < length tabuleiro
+    then do
         putChar (numeroLetra n)
         mapM_ printCarta (tabuleiro !! n)
         putStrLn ""
@@ -77,8 +84,20 @@ pegaCoordenada :: String -> Coordenada
 pegaCoordenada entrada = do
     let x = letraNumero (head entrada)
     let y = digitToInt (entrada !! 1) - 1
-    Coordenada x y
+    Coordenada {x=x, y=y}
 
--- TODO viraCarta
--- viraCarta :: Tabuleiro -> Coordenada -> Jogada
--- viraCarta tabuleiro coordenada = Jogada {carta = carta, tabuleiro=tabuleiro}
+atualizaTabuleiro :: Int -> Int -> Int -> [[Carta]] -> [[Carta]] -> [[Carta]]
+atualizaTabuleiro x y n tabuleiro novo_tabuleiro = do
+    if n < length tabuleiro
+    then do
+        if n == x
+        then do
+            let baralho = atualizaBaralho y 0 (tabuleiro !! n) []
+            atualizaTabuleiro x y (n+1) tabuleiro (novo_tabuleiro ++ [baralho])
+        else
+            atualizaTabuleiro x y (n+1) tabuleiro (novo_tabuleiro ++ [tabuleiro !! n])
+    else novo_tabuleiro
+
+pegaCarta :: [[Carta]] -> Coordenada -> [[Carta]]
+pegaCarta tabuleiro coordenada = do
+    atualizaTabuleiro (getX coordenada) (getY coordenada) 0 tabuleiro []
