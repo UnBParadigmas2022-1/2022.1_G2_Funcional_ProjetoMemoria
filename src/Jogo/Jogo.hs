@@ -1,11 +1,10 @@
 module Jogo.Jogo(
     rodaJogo
-    ) where 
+    ) where
 
 import Carta.Carta
 
 rodaJogo :: IO ()
-rodaJogo = 
-    do 
-        geraBaralho 
-        putStrLn "Jogando..."
+rodaJogo = do
+    let baralho = geraBaralho 3 []
+    print baralho
