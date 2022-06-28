@@ -2,5 +2,10 @@ module Jogo.Jogo(
     rodaJogo
     ) where 
 
+import Carta.Carta
+
 rodaJogo :: IO ()
-rodaJogo = putStrLn "-- Jogando --"
+rodaJogo = 
+    do 
+        geraBaralho 
+        putStrLn "Jogando..."
