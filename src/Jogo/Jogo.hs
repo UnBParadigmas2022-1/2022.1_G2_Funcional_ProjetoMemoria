@@ -3,8 +3,10 @@ module Jogo.Jogo(
     ) where
 
 import Carta.Carta
+import Dificuldade.Dificuldade
 
-rodaJogo :: IO ()
-rodaJogo = do
-    let baralho = geraBaralho 3 []
+rodaJogo :: Int -> IO ()
+rodaJogo n = do
+    let dificuldade = geraDificuldade n
+    let baralho = geraBaralho ((getNumeroCartas dificuldade) `div` 2) []
     print baralho
