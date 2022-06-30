@@ -54,11 +54,21 @@ escolheJogadores = do
     putStrLn "JOGADOR 1 [NOME]: "
     nome1 <- getLine
     let jogador1 = geraJogador nome1 1
-    
-    putStrLn "JOGADOR 2 [NOME]: "
-    nome2 <- getLine
-    let jogador2 = geraJogador nome2 2
-
     print jogador1
-    print jogador2
+
+    putStrLn "ADICIONAR MAIS UM JOGADOR"
+    putStrLn "<1> Jogar individualmente"
+    putStrLn "<2> Adicionar novo jogador"
+    
+    escolhaJ <- getLine
+
+    if escolhaJ == "1"
+    then putStrLn "APENAS UM JOGADOR"
+    else do 
+        putStrLn "JOGADOR 2 [NOME]: "
+        nome2 <- getLine
+        let jogador2 = geraJogador nome2 2
+        print jogador2
+
+
     escolheDificuldade
