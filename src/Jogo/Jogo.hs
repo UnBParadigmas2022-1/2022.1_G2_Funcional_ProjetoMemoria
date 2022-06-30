@@ -5,6 +5,7 @@ module Jogo.Jogo(
 import Carta.Carta ( geraBaralho, Carta )
 import Tabuleiro.Tabuleiro
     ( desenhaTabuleiro, pegaCoordenada, Coordenada, geraTabuleiro, pegaCarta )
+import Dificuldade.Dificuldade
 
 rodaJogo :: IO ()
 rodaJogo = do
@@ -12,6 +13,11 @@ rodaJogo = do
     let tabuleiro = geraTabuleiro baralho
     rodada tabuleiro
     fimJogo tabuleiro
+-- rodaJogo :: Int -> IO ()
+-- rodaJogo n = do
+--     let dificuldade = geraDificuldade n
+--     let baralho = geraBaralho ((getNumeroCartas dificuldade) `div` 2) []
+--     print baralho
 
 fimJogo :: [[Carta]] -> IO ()
 fimJogo tabuleiro = putStrLn "Fim do jogo."
@@ -42,3 +48,4 @@ abreCarta :: [[Carta]] -> String -> [[Carta]]
 abreCarta tabuleiro escolha = do
     let coordenada = pegaCoordenada escolha
     pegaCarta tabuleiro coordenada 
+
