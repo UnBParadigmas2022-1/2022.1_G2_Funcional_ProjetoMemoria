@@ -1,9 +1,11 @@
 module Menu.Menu( 
     desenhaMenu,
-    escolheDificuldade
+    escolheDificuldade, 
+    escolheJogadores
     ) where 
 
 import Jogo.Jogo ( rodaJogo ) 
+import Jogador.Jogador
 
 desenhaMenu :: IO ()
 desenhaMenu = do
@@ -15,7 +17,7 @@ desenhaMenu = do
     if escolha == "2"
     then putStrLn "Saindo..."
     else if escolha == "1"
-    then escolheDificuldade
+    then escolheJogadores
     -- then rodaJogo
     else do 
         putStrLn "Escolha alguma opção do Menu"
@@ -46,3 +48,17 @@ escolheDificuldade = do
         putStrLn "Escolha alguma opção do Menu"
         escolheDificuldade
 
+escolheJogadores :: IO ()
+escolheJogadores = do
+    putStrLn "-- JOGADORES --"
+    putStrLn "JOGADOR 1 [NOME]: "
+    nome1 <- getLine
+    let jogador1 = geraJogador nome1 1
+    
+    putStrLn "JOGADOR 2 [NOME]: "
+    nome2 <- getLine
+    let jogador2 = geraJogador nome2 2
+
+    print jogador1
+    print jogador2
+    escolheDificuldade
