@@ -17,7 +17,7 @@ desenhaMenu = do
     if escolha == "2"
     then putStrLn "Saindo..."
     else if escolha == "1"
-    then escolheJogadores
+    then escolheDificuldade
     -- then rodaJogo
     else do 
         putStrLn "Escolha alguma opção do Menu"

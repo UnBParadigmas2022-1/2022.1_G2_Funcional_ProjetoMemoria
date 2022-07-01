@@ -48,4 +48,3 @@ abreCarta :: [[Carta]] -> String -> [[Carta]]
 abreCarta tabuleiro escolha = do
     let coordenada = pegaCoordenada escolha
     pegaCarta tabuleiro coordenada 
-
