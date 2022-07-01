@@ -7,17 +7,13 @@ import Tabuleiro.Tabuleiro
     ( desenhaTabuleiro, pegaCoordenada, Coordenada, geraTabuleiro, pegaCarta )
 import Dificuldade.Dificuldade
 
-rodaJogo :: IO ()
-rodaJogo = do
-    let baralho = geraBaralho 3 []
+rodaJogo :: Int -> IO ()
+rodaJogo n = do
+    let dificuldade = geraDificuldade n
+    let baralho = geraBaralho ((getNumeroCartas dificuldade) `div` 2) []
     let tabuleiro = geraTabuleiro baralho
     rodada tabuleiro
     fimJogo tabuleiro
--- rodaJogo :: Int -> IO ()
--- rodaJogo n = do
---     let dificuldade = geraDificuldade n
---     let baralho = geraBaralho ((getNumeroCartas dificuldade) `div` 2) []
---     print baralho
 
 fimJogo :: [[Carta]] -> IO ()
 fimJogo tabuleiro = putStrLn "Fim do jogo."
