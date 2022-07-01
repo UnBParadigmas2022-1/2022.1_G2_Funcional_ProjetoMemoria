@@ -1,20 +1,25 @@
-module Menu.Menu( 
-    desenhaMenu 
-    ) where 
+module Menu.Menu
+  ( desenhaMenu,
+  )
+where
 
-import Jogo.Jogo ( rodaJogo ) 
+import Jogo.Jogo (rodaJogo)
 
 desenhaMenu :: IO ()
 desenhaMenu = do
-    putStrLn "-- MENU --"
-    putStrLn "<1> Jogar"
-    putStrLn "<2> Sair"
-    escolha <- getLine
+  putStrLn "============= JOGO DA MEMÓRIA ============="
+  putStrLn "|                                         |"
+  putStrLn "|  <1> Pressione 1 para jogar             |"
+  putStrLn "|  <2> Pressione 2 para sair do programa  |"
+  putStrLn "|                                         |"
+  putStrLn "==========================================="
+  escolha <- getLine
 
-    if escolha == "2"
+  if escolha == "2"
     then putStrLn "Saindo..."
-    else if escolha == "1"
-    then rodaJogo
-    else do 
-        putStrLn "Escolha alguma opção do Menu"
-        desenhaMenu
+    else
+      if escolha == "1"
+        then rodaJogo
+        else do
+          putStrLn "Escolha alguma opção do Menu"
+          desenhaMenu

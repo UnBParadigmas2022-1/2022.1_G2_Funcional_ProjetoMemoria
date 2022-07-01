@@ -4,4 +4,3 @@ import Menu.Menu
 
 main :: IO ()
 main = desenhaMenu
-    
