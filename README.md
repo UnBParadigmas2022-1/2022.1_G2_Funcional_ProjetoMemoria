@@ -24,8 +24,8 @@ Jogo da memoria desenvolvido com Haskel e aplicando o paradigma funcional. Possu
 Adicione 2 ou mais screenshots do projeto em termos de interface e/ou funcionamento.
 
 ## Instalação 
-**Linguagens**: xxxxxx<br>
-**Tecnologias**: xxxxxx<br>
+**Linguagens**: Haskell<br>
+**Tecnologias**: Haskell e Random<br>
 Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
 Insira um manual ou um script para auxiliar ainda mais.
 Gifs animados e outras ilustrações são bem-vindos!
@@ -46,9 +46,14 @@ TEMPO: +/- 15min
 
 ## Participações
 Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
-|Nome do Membro | Contribuição | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) |
-| -- | -- | -- |
-| Fulano  |  Programação dos Fatos da Base de Conhecimento Lógica | Boa |
+| Felipe Boccardi Silva Agustini | Contribuição | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) |
+| Gabriela da Gama Pivetta | -- | -- |
+| Giovana Vitor Dionisio Santana |  Programação dos Fatos da Base de Conhecimento Lógica | Boa |
+| Giovanna Borges Bottino |  Programação dos Fatos da Base de Conhecimento Lógica | Boa |
+| Giulia Lobo Barros |  Programação dos Fatos da Base de Conhecimento Lógica | Boa |
+| Henrique Amorim Costa Melo |  Programação dos Fatos da Base de Conhecimento Lógica | Boa |
+| Hérya Rodrigues Alcantara |  Programação dos Fatos da Base de Conhecimento Lógica | Boa |
+| Murilo Gomes de Souza |  Programação dos Fatos da Base de Conhecimento Lógica | Boa |
 
 ## Outros 
 Quaisquer outras informações sobre o projeto podem ser descritas aqui.
