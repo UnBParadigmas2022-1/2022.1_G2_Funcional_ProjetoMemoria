@@ -18,7 +18,7 @@
 | 180025601 | [Murilo Gomes de Souza](http://github.com/murilogds)	| 
 
 ## Sobre 
-Jogo da memoria desenvolvido com Haskel e aplicando o paradigma funcional. Possui Funções puras, Imutabilidade, Transparência referencial e Funções de alta ordem como  filter, map e reduce.
+Jogo da memória desenvolvido com Haskel e aplicando o paradigma funcional. Possui Funções puras, Imutabilidade, Transparência referencial e Funções de alta ordem como  filter, map e reduce.
 
 ## Screenshots
 Adicione 2 ou mais screenshots do projeto em termos de interface e/ou funcionamento.
