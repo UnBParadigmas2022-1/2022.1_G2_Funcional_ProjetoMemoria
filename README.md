@@ -24,7 +24,7 @@ Jogo da memória desenvolvido com Haskel e aplicando o paradigma funcional. Poss
 <figure>
   <img src="./src/imagens/menu.png" alt="Minha Figura">
   <figcaption>Menu</figcaption>
-</figure>
+</figure><br>
 <figure>
   <img src="./src/imagens/fim_jogo.png" alt="Minha Figura">
   <figcaption>Fim do Jogo</figcaption>
@@ -79,11 +79,11 @@ main
 <figure>
   <img src="./src/imagens/primeira_rodada.png" alt="Minha Figura">
   <figcaption>Primeira Rodada (Tabuleiro Original sem nenhum acerto)</figcaption>
-</figure>
+</figure><br>
 <figure>
   <img src="./src/imagens/rodadas.png" alt="Minha Figura">
   <figcaption>Rodada sem acerto</figcaption>
-</figure>
+</figure><br>
 <figure>
   <img src="./src/imagens/acerto.png" alt="Minha Figura">
   <figcaption>Rodada com acerto</figcaption>
