@@ -6,6 +6,7 @@ module Tabuleiro.Tabuleiro(
     ,Coordenada
     ) where
 
+import System.Random (newStdGen, StdGen, randoms)
 import Carta.Carta (
     Carta
     ,isFound
@@ -31,13 +32,22 @@ getX = x
 
 getY :: Coordenada -> Int
 getY = y
--- TODO ambaralhaCarta
-embaralhaCarta :: [Carta] -> [Carta]
-embaralhaCarta baralho = baralho
 
-geraTabuleiro :: [Carta] -> [[Carta]]
-geraTabuleiro baralho = do
-    replicate 2 (embaralhaCarta baralho)
+embaralhaCarta :: StdGen -> [Carta] -> [Carta]
+embaralhaCarta g xs = embaralha' (randoms g) xs
+
+embaralha' :: [Int] -> [Carta] -> [Carta]
+embaralha'  _ [] = []
+embaralha' (i:is) xs = let (firsts, rest) = splitAt (i `mod` length xs) xs
+                     in (head rest) : embaralha' is (firsts ++ tail rest)
+
+geraTabuleiro :: StdGen -> Int -> [Carta] -> [[Carta]]
+geraTabuleiro gen n baralho = do
+    let embaralhado = embaralhaCarta gen baralho
+    if length embaralhado == n
+        then do [embaralhado]
+    else
+        [take n embaralhado] ++ geraTabuleiro gen n (drop n embaralhado)
 
 printCarta :: Carta -> IO ()
 printCarta carta = do

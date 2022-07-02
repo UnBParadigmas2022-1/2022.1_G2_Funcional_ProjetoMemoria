@@ -2,14 +2,19 @@ module Jogo.Jogo(
     rodaJogo
     ) where
 
+import System.Random ( newStdGen )
+
 import Carta.Carta ( geraBaralho, Carta )
 import Tabuleiro.Tabuleiro
     ( desenhaTabuleiro, pegaCoordenada, Coordenada, geraTabuleiro, pegaCarta )
+import Dificuldade.Dificuldade
 
-rodaJogo :: IO ()
-rodaJogo = do
-    let baralho = geraBaralho 3 []
-    let tabuleiro = geraTabuleiro baralho
+rodaJogo :: Int -> IO ()
+rodaJogo n = do
+    let dificuldade = geraDificuldade n
+    let baralho = geraBaralho ((getNumeroCartas dificuldade) `div` 2) []
+    gen <- newStdGen
+    let tabuleiro = geraTabuleiro gen (getLargura dificuldade) (baralho ++ baralho)
     rodada tabuleiro
     fimJogo tabuleiro
 
