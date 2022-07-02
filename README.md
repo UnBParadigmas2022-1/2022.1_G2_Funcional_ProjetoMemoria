@@ -25,14 +25,49 @@ Adicione 2 ou mais screenshots do projeto em termos de interface e/ou funcioname
 
 ## Instalação 
 **Linguagens**: Haskell<br>
-**Tecnologias**: Haskell e Random<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
-Insira um manual ou um script para auxiliar ainda mais.
-Gifs animados e outras ilustrações são bem-vindos!
+**Tecnologias**: Haskell, Random, Stack e GHC<br>
+> Link para instalação do stack: https://docs.haskellstack.org/en/stable/install_and_upgrade/
+
+Para rodar o Projeto do Jogo da Memória, é necessário seguir os passos abaixo:
+
+1. Entrar na pasta correspodente ao repositório
+```sh
+cd 2022.1_G2_Funcional_ProjetoMemoria/src
+```
+2. Instalar o random
+```sh
+stack install random
+```
+3. Iniciar o GHC com o stack
+```sh
+stack ghci
+```
+4. Compilar
+```sh
+:load Main
+```
+5. Rodar Jogo
+```sh
+main
+```
 
 ## Uso 
-Explique como usar seu projeto.
-Procure ilustrar em passos, com apoio de telas do software.
+1. Depois que o projeto começar a rodar, irá aparecer o menu indicando as instruções para iniciar o jogo:<br>
+Imagem 1<br>
+2. É possível escolher a opção **1**, a qual iniciará o jogo e mostrará novas instruções para identificação do jogador ou a opção **2**, a qual irá finalizar a aplicação:<br>
+Imagem 2<br>
+Imagem 3<br>
+3. Após o primeiro jogador ser identificado é possível inserir mais um jogador no jogo, porém essa é uma ação opcional:<br>
+Imagem 4<br>
+4. Depois que todos os jogadores são identificados, são mostrados os níveis de dificuldade do jogo: (Neste momento também é possível sair do jogo)<br>
+Imagem 5<br>
+5. Após escolher um nível de dificuldade o jogo, de fato, começa:<br>
+Imagem 6<br>
+6. Ao final do jogo, são mostradas informações como o número de pontos feitos pelo jogador vencedor e o nome dele:<br>
+Imagem 7<br>
+
+**Gif do fluxo completo:**<br>
+GIF1
 
 ## Vídeo
 Adicione 1 ou mais vídeos com a execução do projeto.
