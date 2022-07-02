@@ -63,18 +63,18 @@ main
 <figure>
   <img src="./src/imagens/menu.png" alt="Minha Figura">
   <figcaption>Menu</figcaption>
-</figure>
+</figure><br>
 2. É possível escolher a opção **1**, a qual iniciará o jogo e mostrará novas instruções para identificação do jogador (Após o primeiro jogador ser identificado é possível inserir mais um jogador no jogo, porém essa é uma ação opcional) ou a opção **2**, a qual irá finalizar a aplicação:<br>
 <figure>
   <img src="./src/imagens/identificacao_jogadores.png" alt="Minha Figura">
   <figcaption>Menu</figcaption>
-</figure>
+</figure><br>
 **Imagem 3**<br>
 3. Depois que todos os jogadores são identificados, são mostrados os níveis de dificuldade do jogo: (Neste momento também é possível sair do jogo)<br>
 <figure>
   <img src="./src/imagens/niveis_dificuldade.png" alt="Minha Figura">
   <figcaption>Identificação dos jogadores</figcaption>
-</figure>
+</figure><br>
 4. Após escolher um nível de dificuldade o jogo, de fato, começa: (Quando há um erro, o tabuleiro volta a apresentar apenas o íncone '*', porém quando há um acerto, ele apresenta o ícone '_' )<br>
 <figure>
   <img src="./src/imagens/primeira_rodada.png" alt="Minha Figura">
@@ -87,12 +87,12 @@ main
 <figure>
   <img src="./src/imagens/acerto.png" alt="Minha Figura">
   <figcaption>Rodada com acerto</figcaption>
-</figure>
+</figure><br>
 5. Ao final do jogo, são mostradas informações como o número de pontos feitos pelo jogador vencedor e o nome dele:<br>
 <figure>
   <img src="./src/imagens/fim_jogo.png" alt="Minha Figura">
   <figcaption>Fim do Jogo</figcaption>
-</figure>
+</figure><br>
 
 **Gif do fluxo completo:**<br>
 GIF1
