@@ -4,11 +4,9 @@ module Tabuleiro.Tabuleiro(
     ,pegaCoordenada
     ,pegaCarta
     ,Coordenada
-    ,embaralhaCarta
     ) where
 
 import System.Random (newStdGen, StdGen, randoms)
-
 import Carta.Carta (
     Carta
     ,isFound
@@ -23,7 +21,6 @@ import Data.Char(
     ,chr
     )
 import Data.Binary.Put (putInt8)
-import System.Random (randomRIO)
 
 data Coordenada = Coordenada {
     x :: Int,
@@ -43,7 +40,6 @@ embaralha' :: [Int] -> [Carta] -> [Carta]
 embaralha'  _ [] = []
 embaralha' (i:is) xs = let (firsts, rest) = splitAt (i `mod` length xs) xs
                      in (head rest) : embaralha' is (firsts ++ tail rest)
-
 
 geraTabuleiro :: StdGen -> Int -> [Carta] -> [[Carta]]
 geraTabuleiro gen n baralho = do
