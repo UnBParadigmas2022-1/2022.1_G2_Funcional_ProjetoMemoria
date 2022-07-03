@@ -127,11 +127,14 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 | Murilo Gomes de Souza |  Programação dos Fatos da Base de Conhecimento Lógica | Boa |
 
 ## Outros 
-Quaisquer outras informações sobre o projeto podem ser descritas aqui.
-(i) Lições Aprendidas;
-(ii) Percepções;
-(iii) Contribuições e Fragilidades, e
-(iV) Trabalhos Futuros.
+### I. Lições Aprendidas
+
+### II. Percepções
+Uma das maiores percepções obtidas pela equipe ao longo da execução deste trabalho foi a modularização possibilitada pelo Paradigma Funcional, principalmente pelo Haskell. Todo o trabalho foi divido em módulos que compõem o jogo da memória. Estes módulos puderam ser trabalhados em paralelo para depois serem amarrados a fim de termos um jogo em plena funcionalidade. 
+
+### III. Contribuições e Fragilidades
+
+### IV. Trabalhos Futuros
 
 ## Fontes
 - Videoaulas e materiais de estudo disponibilizados pela professora Milene Serrano.
