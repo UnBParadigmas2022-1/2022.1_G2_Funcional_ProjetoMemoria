@@ -36,8 +36,10 @@ rodada tabuleiro jogadores index = do
       let pontuacaoJogador2 = getPontuacao (jogadores !! 1)
       if pontuacaoJogador1 > pontuacaoJogador2
         then do fimJogo tabuleiro (jogadores !! 0)
+      else if pontuacaoJogador2 > pontuacaoJogador1
+        then do fimJogo tabuleiro (jogadores !! 1)
       else do
-        fimJogo tabuleiro (jogadores !! 1)
+        putStrLn "Fim do jogo. Empate!"
   else do
     putStrLn ("Sua vez : " ++ (getNome (jogador)))
     desenhaTabuleiro tabuleiro
