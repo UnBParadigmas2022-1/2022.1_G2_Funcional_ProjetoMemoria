@@ -18,7 +18,7 @@
 | 180025601 | [Murilo Gomes de Souza](http://github.com/murilogds)	| 
 
 ## Sobre 
-Jogo da memória desenvolvido com Haskel e aplicando o paradigma funcional. Possui Funções puras, Imutabilidade, Transparência referencial e Funções de alta ordem como  filter, map e reduce.
+Jogo da memória desenvolvido com Haskell e aplicando o paradigma funcional. Possui Funções puras, Imutabilidade, Transparência referencial e Funções de alta ordem como  filter, map e reduce.
 
 ## Screenshots
 <figure>
@@ -70,12 +70,12 @@ main
   <figcaption>Identificação dos jogadores</figcaption>
 </figure><br><br>
 **Imagem 3**<br><br>
-3. Depois que todos os jogadores são identificados, são mostrados os níveis de dificuldade do jogo: (Neste momento também é possível sair do jogo)<br><br>
+3. Depois que todos os jogadores são identificados, são mostrados os níveis de dificuldade do jogo (Neste momento também é possível sair do jogo):<br><br>
 <figure>
   <img src="./src/imagens/niveis_dificuldade.png" alt="Minha Figura">
   <figcaption>Dificuldades</figcaption>
 </figure><br><br>
-4. Após escolher um nível de dificuldade o jogo, de fato, começa: (Quando há um erro, o tabuleiro volta a apresentar apenas o íncone '*', porém quando há um acerto, ele apresenta o ícone '_' )<br><br>
+4. Após escolher um nível de dificuldade, o jogo de fato começa. O tabuleiro é representado por linhas de letras e colunas de números e cada carta (representada por um ' * ' ) é localizada pelo par de uma letra com um número (e.g. A1, B2, B4). Em cada rodada (de cada jogador), o jogador escolhe duas cartas e pode ver seus valores. Quando elas são iguais, a pontuação do jogador aumenta em +1 e as cartas viram novamente, mas trocando seu carácter de ' * ' para ' _ '. Caso contrário, o tabuleiro volta a apresentar o carácter ' * ' no lugar das cartas escolhidas e a pontuação não muda:<br><br>
 <figure>
   <img src="./src/imagens/primeira_rodada.png" alt="Minha Figura">
   <figcaption>Primeira Rodada (Tabuleiro Original sem nenhum acerto)</figcaption>
@@ -114,7 +114,7 @@ TEMPO: +/- 15min
 Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 | Aluno | Contribuição | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) |
 | ----- | ------------ | ------------------------------------------------------------------------------ |
-| Felipe Boccardi Silva Agustini |  |  |
+| Felipe Boccardi Silva Agustini | Programação dos Fatos da Base de Conhecimento Lógica | Boa |
 | Gabriela da Gama Pivetta |  |  |
 | Giovana Vitor Dionisio Santana |  Programação dos Fatos da Base de Conhecimento Lógica | Boa |
 | Giovanna Borges Bottino |  Programação dos Fatos da Base de Conhecimento Lógica | Boa |
@@ -131,5 +131,4 @@ Quaisquer outras informações sobre o projeto podem ser descritas aqui.
 (iV) Trabalhos Futuros.
 
 ## Fontes
-Referencie, adequadamente, as referências utilizadas.
-Indique ainda, fontes de leitura complementares.
+- Videoaulas e materiais de estudo disponibilizados pela professora Milene Serrano.
