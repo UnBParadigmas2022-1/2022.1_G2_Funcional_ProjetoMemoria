@@ -12,9 +12,9 @@ where
 import System.Random (newStdGen, StdGen, randoms)
 import Carta.Carta (
     Carta
-    ,isEncontrado
-    ,isEscondido
-    ,getValue
+    ,getIsEncontrado
+    ,getIsEscondido
+    ,getValor
     ,atualizaBaralho
     ,atualizaAchadoNoBaralho
     )
@@ -63,14 +63,14 @@ geraTabuleiro gen n baralho = do
 printCarta :: Carta -> IO ()
 printCarta carta = do
   let c = carta :: Carta
-  if not (isEncontrado c)
+  if not (getIsEncontrado c)
     then do
-      if isEscondido c
+      if getIsEscondido c
         then do
-           putStr " *"
+          putStr " *"
       else do
           putStr " "
-          putStr . unwords . map show $ [getValue c]
+          putStr . unwords . map show $ [getValor c]
   else putStr " -"
 
 printLinha :: Int -> [[Carta]] -> IO ()
