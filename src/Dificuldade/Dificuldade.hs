@@ -1,28 +1,25 @@
 module Dificuldade.Dificuldade(
-    geraDificuldade,
     Dificuldade,
+    geraDificuldade,
     getNumeroCartas,
-    getAltura,
-    getLargura
+    getTamanhoTabuleiro
     ) where
 
 data Dificuldade = Dificuldade{
-    altura :: Int,
-    largura :: Int,
+    tamanhoTabuleiro :: Int,
     tempoSegundos :: Int
 } deriving Show
 
 geraDificuldade :: Int -> Dificuldade
-geraDificuldade n | n == 1 = Dificuldade {altura=2, largura=4, tempoSegundos = 2}
-                  | n == 2 = Dificuldade {altura=4, largura=4, tempoSegundos = 2}
-                  | n == 3 = Dificuldade {altura=4, largura=6, tempoSegundos = 2}
-                  | otherwise = Dificuldade {altura=4, largura=6, tempoSegundos = 1}
+geraDificuldade n | n == 1 = Dificuldade {tamanhoTabuleiro=2, tempoSegundos = 2}
+                  | n == 2 = Dificuldade {tamanhoTabuleiro=4, tempoSegundos = 2}
+                  | n == 3 = Dificuldade {tamanhoTabuleiro=6, tempoSegundos = 2}
 
 getNumeroCartas :: Dificuldade -> Int
-getNumeroCartas dificuldade = do (getAltura dificuldade) * (getLargura dificuldade)
+getNumeroCartas dificuldade = do
+    let tamanhoTabuleiro = getTamanhoTabuleiro dificuldade
+    tamanhoTabuleiro * tamanhoTabuleiro
 
-getLargura :: Dificuldade -> Int
-getLargura = largura
+getTamanhoTabuleiro :: Dificuldade -> Int
+getTamanhoTabuleiro = tamanhoTabuleiro
 
-getAltura :: Dificuldade -> Int
-getAltura = altura

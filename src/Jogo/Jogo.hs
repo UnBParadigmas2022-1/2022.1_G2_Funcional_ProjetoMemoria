@@ -11,13 +11,14 @@ import Dificuldade.Dificuldade
 import Jogador.Jogador
 import Pontuacao.Pontuacao
 
-rodaJogo :: Int -> [Jogador] -> IO ()
-rodaJogo n jogadores = do
-    let dificuldade = geraDificuldade n
-    let baralho = geraBaralho ((getNumeroCartas dificuldade) `div` 2) []
-    gen <- newStdGen
-    let tabuleiro = geraTabuleiro gen (getLargura dificuldade) (baralho ++ baralho)
-    rodada tabuleiro jogadores 0
+rodaJogo :: Dificuldade -> [Jogador] -> IO ()
+rodaJogo dificuldade jogadores = do
+  gen <- newStdGen
+  let tamanhoTabuleiro = getTamanhoTabuleiro dificuldade
+  let numeroCartas = getNumeroCartas dificuldade `div` 2
+  let baralho = geraBaralho numeroCartas []
+  let tabuleiro = geraTabuleiro gen tamanhoTabuleiro (baralho ++ baralho)
+  rodada tabuleiro jogadores 0
 
 fimJogo :: [[Carta]] -> Jogador -> IO ()
 fimJogo tabuleiro jogador = do
@@ -36,30 +37,29 @@ rodada tabuleiro jogadores index = do
     putStrLn ("Sua vez : " ++ (getNome (jogador)))
     desenhaTabuleiro tabuleiro
 
-    putStrLn "Escolha uma carta:"
-    escolha <- getLine
-    let tabuleiro2 = abreCarta tabuleiro escolha
-    valorEscolha1 <- getValorCartaByCoordenada tabuleiro2 escolha
-
+    escolha <- getEscolha tabuleiro
+    let coordenadaCartaEscolhida = snd escolha
+    let valorCartaEscolhida = fst escolha
+    let tabuleiro2 = pegaCarta tabuleiro coordenadaCartaEscolhida
     desenhaTabuleiro tabuleiro2
-    putStrLn "Escolha uma carta:"
-    escolha2 <- getLine
-    let tabuleiro3 = abreCarta tabuleiro2 escolha2
-    valorEscolha2 <- getValorCartaByCoordenada tabuleiro3 escolha2
+
+    escolha2 <- getEscolha tabuleiro2
+    let coordenadaCartaEscolhida2 = snd escolha2
+    let valorCartaEscolhida2 = fst escolha2
+    let tabuleiro3 = pegaCarta tabuleiro2 coordenadaCartaEscolhida2
     desenhaTabuleiro tabuleiro3
 
     let novoIndex = (index+1)`mod` (length jogadores)
-    pontuacao <- verificaEscolhas valorEscolha1 valorEscolha2 (getPontuacao jogador)
-    if (getPontuacao jogador) == pontuacao
-      then do
-        putStrLn "Errou uma carta:"
-        let tabuleiro4 = abreCarta tabuleiro3 escolha
-        let tabuleiro5 = abreCarta tabuleiro4 escolha2
-
-        rodada tabuleiro5 jogadores ((index+1)`mod` 2)
+    let pontuacaoJogador = getPontuacao jogador
+    pontuacao <- verificaEscolhas valorCartaEscolhida valorCartaEscolhida2 pontuacaoJogador
+    if pontuacaoJogador == pontuacao then do
+      putStrLn "Errou uma carta:"
+      let tabuleiro4 = pegaCarta tabuleiro3 coordenadaCartaEscolhida
+      let tabuleiro5 = pegaCarta tabuleiro4 coordenadaCartaEscolhida2
+      rodada tabuleiro5 jogadores ((index+1)`mod` 2)
     else do
-      let tabuleiro4 = cartaAchada tabuleiro3 escolha
-      let tabuleiro5 = cartaAchada tabuleiro4 escolha2
+      let tabuleiro4 = achaCartaNoTabuleiro tabuleiro3 coordenadaCartaEscolhida
+      let tabuleiro5 = achaCartaNoTabuleiro tabuleiro4 coordenadaCartaEscolhida2
 
       let jogador2 = geraJogador (getNome jogador) (getNum jogador) pontuacao
 
@@ -75,13 +75,26 @@ rodada tabuleiro jogadores index = do
       else do
         rodada tabuleiro5 [jogador2] index
 
-abreCarta :: [[Carta]] -> String -> [[Carta]]
-abreCarta tabuleiro escolha = do
+getEscolha :: [[Carta]] -> IO (Int, Coordenada)
+getEscolha tabuleiro = do
+  putStrLn "--> Escolha uma carta (Exemplo: A1)"
+  escolha <- getLine
   let coordenada = pegaCoordenada escolha
-  pegaCarta tabuleiro coordenada
-
-cartaAchada :: [[Carta]] -> String -> [[Carta]]
-cartaAchada tabuleiro escolha = do
-  let coordenada = pegaCoordenada escolha
-  achaCartaNoTabuleiro tabuleiro coordenada
-
+  let x = getX coordenada
+  let y = getY coordenada
+  let cartaSelecionada = getCartaByCoordenada tabuleiro escolha
+  let isEncontrado = getIsEncontrado cartaSelecionada
+  let isEscondido = getIsEscondido cartaSelecionada
+  let valorCartaSelecionada = getValor cartaSelecionada
+  print(isEncontrado)
+  print(isEscondido)
+  if(x < 0 || x >= length tabuleiro || y < 0 || y >= length tabuleiro) then do
+    putStrLn "--> Escolha uma coordenada dentro do tabuleiro!!"
+    getEscolha tabuleiro
+  else if (isEncontrado) then do
+    putStrLn "--> Escolha uma carta que ainda não foi encontrada!!"
+    getEscolha tabuleiro
+  else if (not isEscondido) then do
+    putStrLn "--> Essa carta já foi escolhida!!"
+    getEscolha tabuleiro
+  else do return (valorCartaSelecionada, coordenada)
