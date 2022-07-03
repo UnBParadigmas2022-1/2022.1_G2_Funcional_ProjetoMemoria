@@ -31,7 +31,13 @@ rodada tabuleiro jogadores index = do
   let pontuacaoTotal = sum (map getPontuacao jogadores)
   let qtCartas = (length tabuleiro * length (tabuleiro !! 1) ) `div` 2
   if pontuacaoTotal >= qtCartas
-    then fimJogo tabuleiro jogador
+    then do
+      let pontuacaoJogador1 = getPontuacao (jogadores !! 0) 
+      let pontuacaoJogador2 = getPontuacao (jogadores !! 1)
+      if pontuacaoJogador1 > pontuacaoJogador2
+        then do fimJogo tabuleiro (jogadores !! 0)
+      else do
+        fimJogo tabuleiro (jogadores !! 1)
   else do
     putStrLn ("Sua vez : " ++ (getNome (jogador)))
     desenhaTabuleiro tabuleiro
