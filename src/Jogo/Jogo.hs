@@ -96,8 +96,6 @@ getEscolha tabuleiro = do
   let isEncontrado = getIsEncontrado cartaSelecionada
   let isEscondido = getIsEscondido cartaSelecionada
   let valorCartaSelecionada = getValor cartaSelecionada
-  print(isEncontrado)
-  print(isEscondido)
   if(x < 0 || x >= length tabuleiro || y < 0 || y >= length tabuleiro) then do
     putStrLn "--> Escolha uma coordenada dentro do tabuleiro!!"
     getEscolha tabuleiro
