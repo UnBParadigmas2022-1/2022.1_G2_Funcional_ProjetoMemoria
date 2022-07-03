@@ -69,7 +69,10 @@ main
   <img src="./src/imagens/identificacao_jogadores.png" alt="Minha Figura">
   <figcaption>Identificação dos jogadores</figcaption>
 </figure><br><br>
-**Imagem 3**<br><br>
+<figure>
+  <img src="./src/imagens/saindo.png" alt="Minha Figura">
+  <figcaption>Saída</figcaption>
+</figure><br><br>
 3. Depois que todos os jogadores são identificados, são mostrados os níveis de dificuldade do jogo (Neste momento também é possível sair do jogo):<br><br>
 <figure>
   <img src="./src/imagens/niveis_dificuldade.png" alt="Minha Figura">
