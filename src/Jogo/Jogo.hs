@@ -50,13 +50,14 @@ rodada tabuleiro jogadores index = do
     desenhaTabuleiro tabuleiro3
 
     let novoIndex = (index+1)`mod` (length jogadores)
-    let pontuacaoJogador = getPontuacao jogador
-    pontuacao <- verificaEscolhas valorCartaEscolhida valorCartaEscolhida2 pontuacaoJogador
-    if pontuacaoJogador == pontuacao then do
-      putStrLn "Errou uma carta:"
-      let tabuleiro4 = pegaCarta tabuleiro3 coordenadaCartaEscolhida
-      let tabuleiro5 = pegaCarta tabuleiro4 coordenadaCartaEscolhida2
-      rodada tabuleiro5 jogadores ((index+1)`mod` 2)
+    pontuacao <- verificaEscolhas valorCartaEscolhida valorCartaEscolhida2 (getPontuacao jogador)
+    if (getPontuacao jogador) == pontuacao
+      then do
+        putStrLn "Errou uma carta:"
+        let tabuleiro4 = pegaCarta tabuleiro3 coordenadaCartaEscolhida
+        let tabuleiro5 = pegaCarta tabuleiro4 coordenadaCartaEscolhida2
+
+        rodada tabuleiro5 jogadores novoIndex
     else do
       let tabuleiro4 = achaCartaNoTabuleiro tabuleiro3 coordenadaCartaEscolhida
       let tabuleiro5 = achaCartaNoTabuleiro tabuleiro4 coordenadaCartaEscolhida2
