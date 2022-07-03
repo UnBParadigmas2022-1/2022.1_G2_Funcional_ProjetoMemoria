@@ -67,7 +67,7 @@ printCarta carta = do
     then do
       if getIsEscondido c
         then do
-           putStr " *"
+          putStr " *"
       else do
           putStr " "
           putStr . unwords . map show $ [getValor c]

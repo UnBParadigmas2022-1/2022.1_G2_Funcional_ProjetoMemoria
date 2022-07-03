@@ -28,19 +28,21 @@ fimJogo tabuleiro jogador = do
 rodada :: [[Carta]] -> [Jogador] -> Int -> IO ()
 rodada tabuleiro jogadores index = do
   let jogador = (jogadores !! index)
-
+  let pontuacaoJogador = getPontuacao jogador
+  let qtCartas = div (length tabuleiro * length (tabuleiro !! 1) ) 2
   let pontuacaoTotal = sum (map getPontuacao jogadores)
-  let qtCartas = (length tabuleiro * length (tabuleiro !! 1) ) `div` 2
-  if pontuacaoTotal >= qtCartas
+
+  if length jogadores > 1 && (pontuacaoJogador > div qtCartas 2 || pontuacaoTotal >= qtCartas)
     then do
-      let pontuacaoJogador1 = getPontuacao (jogadores !! 0) 
-      let pontuacaoJogador2 = getPontuacao (jogadores !! 1)
-      if pontuacaoJogador1 > pontuacaoJogador2
-        then do fimJogo tabuleiro (jogadores !! 0)
-      else if pontuacaoJogador2 > pontuacaoJogador1
-        then do fimJogo tabuleiro (jogadores !! 1)
-      else do
-        putStrLn "Fim do jogo. Empate!"
+      if pontuacaoJogador > div qtCartas 2
+        then do fimJogo tabuleiro jogador
+      else if pontuacaoJogador == div qtCartas 2 && pontuacaoTotal == qtCartas
+        then do putStrLn "Fim do jogo. Empate!"
+      else do 
+        -- nunca vai entrar nesse else, mas o Haskell exige
+        putStrLn ""
+  else if pontuacaoJogador >= qtCartas
+    then do fimJogo tabuleiro jogador
   else do
     putStrLn ("Sua vez : " ++ (getNome (jogador)))
     desenhaTabuleiro tabuleiro
