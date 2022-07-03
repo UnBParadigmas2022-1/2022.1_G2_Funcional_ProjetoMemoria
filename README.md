@@ -6,16 +6,16 @@
 **Paradigma**: Funcional<br>
 
 ## Alunos
-|Matrícula | Aluno |
-| -- | -- |
-| 180119818 | [Felipe Boccardi Silva Agustini](http://github.com/fealps) | 
-| 180052845 | [Gabriela da Gama Pivetta](http://github.com/gabrielapivetta) | 
-| 180017659 | [Giovana Vitor Dionisio Santana](http://github.com/giovanadionisio) | 
-| 170011267 | [Giovanna Borges Bottino](http://github.com/giovannabbottino) | 
-| 180017870 | [Giulia Lobo Barros](http://github.com/Giuulob89) | 
-| 170144488 | [Henrique Amorim Costa Melo](http://github.com/henriqueamorim20) | 
-| 180018574 | [Hérya Rodrigues Alcantara](http://github.com/hryds) | 
-| 180025601 | [Murilo Gomes de Souza](http://github.com/murilogds)	| 
+| Matrícula | Aluno                                                               |
+| --------- | ------------------------------------------------------------------- |
+| 180119818 | [Felipe Boccardi Silva Agustini](http://github.com/fealps)          |
+| 180052845 | [Gabriela da Gama Pivetta](http://github.com/gabrielapivetta)       |
+| 180017659 | [Giovana Vitor Dionisio Santana](http://github.com/giovanadionisio) |
+| 170011267 | [Giovanna Borges Bottino](http://github.com/giovannabbottino)       |
+| 180017870 | [Giulia Lobo Barros](http://github.com/Giuulob89)                   |
+| 170144488 | [Henrique Amorim Costa Melo](http://github.com/henriqueamorim20)    |
+| 180018574 | [Hérya Rodrigues Alcantara](http://github.com/hryds)                |
+| 180025601 | [Murilo Gomes de Souza](http://github.com/murilogds)                |
 
 ## Sobre 
 Jogo da memoria desenvolvido com Haskel e aplicando o paradigma funcional. Possui Funções puras, Imutabilidade, Transparência referencial e Funções de alta ordem como  filter, map e reduce.
@@ -46,9 +46,9 @@ TEMPO: +/- 15min
 
 ## Participações
 Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
-|Nome do Membro | Contribuição | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) |
-| -- | -- | -- |
-| Fulano  |  Programação dos Fatos da Base de Conhecimento Lógica | Boa |
+| Nome do Membro | Contribuição                                         | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) |
+| -------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------ |
+| Fulano         | Programação dos Fatos da Base de Conhecimento Lógica | Boa                                                                            |
 
 ## Outros 
 Quaisquer outras informações sobre o projeto podem ser descritas aqui.

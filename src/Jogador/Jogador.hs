@@ -1,10 +1,25 @@
-module Jogador.Jogador (Jogador, geraJogador) where
+module Jogador.Jogador (
+    Jogador
+    ,geraJogador
+    ,getNome
+    ,getNum
+    ,getPontuacao) where
 
 data Jogador = Jogador {
                nome :: String,
-               num :: Int 
+               num :: Int,
+               pontuacao :: Int
                } deriving Show
 
-geraJogador :: String -> Int -> Jogador
-geraJogador nomeJogador n = do
-            Jogador{nome = nomeJogador, num = n}
+getNome :: Jogador -> String
+getNome = nome
+
+getNum :: Jogador -> Int
+getNum = num
+
+getPontuacao :: Jogador -> Int
+getPontuacao = pontuacao
+
+geraJogador :: String -> Int -> Int -> Jogador
+geraJogador nomeJogador n pontuacao = do
+            Jogador{nome = nomeJogador, num = n, pontuacao=pontuacao}
