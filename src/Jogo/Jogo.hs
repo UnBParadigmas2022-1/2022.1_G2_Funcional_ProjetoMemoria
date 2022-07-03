@@ -63,7 +63,6 @@ rodada tabuleiro jogadores index = do
     pontuacao <- verificaEscolhas valorCartaEscolhida valorCartaEscolhida2 (getPontuacao jogador)
     if (getPontuacao jogador) == pontuacao
       then do
-        putStrLn "Errou uma carta:"
         let tabuleiro4 = pegaCarta tabuleiro3 coordenadaCartaEscolhida
         let tabuleiro5 = pegaCarta tabuleiro4 coordenadaCartaEscolhida2
 

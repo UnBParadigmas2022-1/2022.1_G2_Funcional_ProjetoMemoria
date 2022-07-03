@@ -21,7 +21,7 @@ verificaEscolhas valorEscolha valorEscolha2 pontuacaoTotal = do
       putStrLn ("Sua pontuacao atual eh: " ++ show pontuacaoTotal)
       return pontuacaoTotal
     else do
-      putStrLn "Você perdeu a rodada! Tente novamente"
+      putStrLn "Você perdeu a rodada! Tente novamente."
       putStrLn ("Sua pontuacao atual eh: " ++ show pontuacaoTotal)
       return pontuacaoTotal
 
