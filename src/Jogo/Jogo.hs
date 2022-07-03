@@ -28,11 +28,21 @@ fimJogo tabuleiro jogador = do
 rodada :: [[Carta]] -> [Jogador] -> Int -> IO ()
 rodada tabuleiro jogadores index = do
   let jogador = (jogadores !! index)
-
+  let pontuacaoJogador = getPontuacao jogador
+  let qtCartas = div (length tabuleiro * length (tabuleiro !! 1) ) 2
   let pontuacaoTotal = sum (map getPontuacao jogadores)
-  let qtCartas = (length tabuleiro * length (tabuleiro !! 1) ) `div` 2
-  if pontuacaoTotal >= qtCartas
-    then fimJogo tabuleiro jogador
+
+  if length jogadores > 1 && (pontuacaoJogador > div qtCartas 2 || pontuacaoTotal >= qtCartas)
+    then do
+      if pontuacaoJogador > div qtCartas 2
+        then do fimJogo tabuleiro jogador
+      else if pontuacaoJogador == div qtCartas 2 && pontuacaoTotal == qtCartas
+        then do putStrLn "Fim do jogo. Empate!"
+      else do 
+        -- nunca vai entrar nesse else, mas o Haskell exige
+        putStrLn ""
+  else if pontuacaoJogador >= qtCartas
+    then do fimJogo tabuleiro jogador
   else do
     putStrLn ("Sua vez : " ++ (getNome (jogador)))
     desenhaTabuleiro tabuleiro
@@ -50,13 +60,14 @@ rodada tabuleiro jogadores index = do
     desenhaTabuleiro tabuleiro3
 
     let novoIndex = (index+1)`mod` (length jogadores)
-    let pontuacaoJogador = getPontuacao jogador
-    pontuacao <- verificaEscolhas valorCartaEscolhida valorCartaEscolhida2 pontuacaoJogador
-    if pontuacaoJogador == pontuacao then do
-      putStrLn "Errou uma carta:"
-      let tabuleiro4 = pegaCarta tabuleiro3 coordenadaCartaEscolhida
-      let tabuleiro5 = pegaCarta tabuleiro4 coordenadaCartaEscolhida2
-      rodada tabuleiro5 jogadores ((index+1)`mod` 2)
+    pontuacao <- verificaEscolhas valorCartaEscolhida valorCartaEscolhida2 (getPontuacao jogador)
+    if (getPontuacao jogador) == pontuacao
+      then do
+        putStrLn "Errou uma carta:"
+        let tabuleiro4 = pegaCarta tabuleiro3 coordenadaCartaEscolhida
+        let tabuleiro5 = pegaCarta tabuleiro4 coordenadaCartaEscolhida2
+
+        rodada tabuleiro5 jogadores novoIndex
     else do
       let tabuleiro4 = achaCartaNoTabuleiro tabuleiro3 coordenadaCartaEscolhida
       let tabuleiro5 = achaCartaNoTabuleiro tabuleiro4 coordenadaCartaEscolhida2

@@ -32,13 +32,13 @@ escolheDificuldade jogadores = do
   putStrLn "<1> Fácil"
   putStrLn "<2> Média"
   putStrLn "<3> Difícil"
-  putStrLn "<5> Sair"
+  putStrLn "<4> Sair"
   escolhaD <- getLine
 
   if(escolhaD == "1" || escolhaD == "2" || escolhaD == "3") then do
     let dificuldade = geraDificuldade (read escolhaD :: Int)
     rodaJogo dificuldade jogadores
-    else if escolhaD == "5"
+    else if escolhaD == "4"
       then putStrLn "Saindo..."
       else do
         putStrLn "Escolha alguma opção do Menu"
