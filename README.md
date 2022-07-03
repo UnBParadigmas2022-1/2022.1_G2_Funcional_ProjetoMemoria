@@ -112,8 +112,10 @@ TEMPO: +/- 15min
 
 ## Participações
 Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
-| Felipe Boccardi Silva Agustini | Contribuição | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) |
-| Gabriela da Gama Pivetta | -- | -- |
+| Aluno | Contribuição | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) |
+| ----- | ------------ | ------------------------------------------------------------------------------ |
+| Felipe Boccardi Silva Agustini |  |  |
+| Gabriela da Gama Pivetta |  |  |
 | Giovana Vitor Dionisio Santana |  Programação dos Fatos da Base de Conhecimento Lógica | Boa |
 | Giovanna Borges Bottino |  Programação dos Fatos da Base de Conhecimento Lógica | Boa |
 | Giulia Lobo Barros |  Programação dos Fatos da Base de Conhecimento Lógica | Boa |
