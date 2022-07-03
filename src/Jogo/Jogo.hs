@@ -56,7 +56,7 @@ rodada tabuleiro jogadores index = do
         let tabuleiro4 = abreCarta tabuleiro3 escolha
         let tabuleiro5 = abreCarta tabuleiro4 escolha2
 
-        rodada tabuleiro5 jogadores ((index+1)`mod` 2)
+        rodada tabuleiro5 jogadores novoIndex
     else do
       let tabuleiro4 = cartaAchada tabuleiro3 escolha
       let tabuleiro5 = cartaAchada tabuleiro4 escolha2
