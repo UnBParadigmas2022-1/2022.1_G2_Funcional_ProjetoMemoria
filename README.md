@@ -135,6 +135,9 @@ Uma das maiores percepções obtidas pela equipe ao longo da execução deste tr
 ### III. Contribuições e Fragilidades
 
 ### IV. Trabalhos Futuros
+A equipe elenca duas notáveis possibilidades de futuros trabalhos em cima do atual jogo:
+  * Implementação de interface gráfica, tornando o jogo mais lúdico e de fácil utilização;
+  * Possiblitar partidas com mais de dois jogadores, aumentando o nível de entretenimento do jogo. 
 
 ## Fontes
 - Videoaulas e materiais de estudo disponibilizados pela professora Milene Serrano.
