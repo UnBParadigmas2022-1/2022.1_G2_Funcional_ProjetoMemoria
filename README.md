@@ -95,7 +95,10 @@ main
 </figure><br><br>
 
 **Gif do fluxo completo:**<br>
-GIF1
+![gif_funcional](https://user-images.githubusercontent.com/54070461/177043169-30a3b363-bae0-4d5c-ad74-b07ed9692bb9.gif)
+
+
+
 
 ## Vídeo
 Adicione 1 ou mais vídeos com a execução do projeto.
