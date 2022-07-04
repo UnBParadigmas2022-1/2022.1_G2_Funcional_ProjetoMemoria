@@ -98,7 +98,7 @@ main
 
 
 ## Vídeo
-[Apresentação - Jogo da Memória](./src/imagens/Apresenta%C3%A7%C3%A3o%20Paradigmas-20220703_215938-Meeting%20Recording.mp4)
+[Apresentação - Jogo da Memória](./src/imagens/Apresenta%C3%A7%C3%A3o%20Paradigmas-20220703_215938-Meeting%20Recording.mp4) (Fazer o download)
 
 ## Participações
 Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
