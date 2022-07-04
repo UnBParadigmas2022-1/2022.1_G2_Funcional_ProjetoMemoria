@@ -26,7 +26,7 @@ Jogo da memória desenvolvido com Haskell e aplicando o paradigma funcional. Pos
   <figcaption>Menu</figcaption>
 </figure><br><br>
 <figure>
-  <img src="./src/imagens/fim_jogo.png" alt="Minha Figura">
+  <img src="./src/imagens/jogo.jpeg" alt="Minha Figura">
   <figcaption>Fim do Jogo</figcaption>
 </figure>
 
@@ -61,17 +61,13 @@ main
 ## Uso 
 1. Depois que o projeto começar a rodar, irá aparecer o menu indicando as instruções para iniciar o jogo:<br><br>
 <figure>
-  <img src="./src/imagens/menu_inicial.jpeg" alt="Minha Figura">
+  <img src="./src/imagens/menu.png" alt="Minha Figura">
   <figcaption>Menu</figcaption>
 </figure><br><br>
 2. É possível escolher a opção **1**, a qual iniciará o jogo e mostrará novas instruções para identificação do jogador (Após o primeiro jogador ser identificado é possível inserir mais um jogador no jogo, porém essa é uma ação opcional) ou a opção **2**, a qual irá finalizar a aplicação:<br><br>
 <figure>
   <img src="./src/imagens/jogadores.jpeg" alt="Minha Figura">
-  <figcaption>Número de jogadores</figcaption>
-</figure><br><br>
-<figure>
-  <img src="./src/imagens/identificacao_jogadores.jpeg" alt="Minha Figura">
-  <figcaption>Identificação dos Jogadores</figcaption>
+  <figcaption>Número e identificação de jogadores</figcaption>
 </figure><br><br>
 <figure>
   <img src="./src/imagens/saindo.png" alt="Minha Figura">
@@ -101,17 +97,8 @@ main
 ![content](https://user-images.githubusercontent.com/54070461/177064767-e3d74da7-76e0-4069-97dc-d157dd02ee45.gif)
 
 
-
-
 ## Vídeo
-Adicione 1 ou mais vídeos com a execução do projeto.
-Procure: 
-(i) Introduzir o projeto;
-(ii) Mostrar passo a passo o código, explicando-o, e deixando claro o que é de terceiros, e o que é contribuição real da equipe;
-(iii) Apresentar particularidades do Paradigma, da Linguagem, e das Tecnologias, e
-(iV) Apresentar lições aprendidas, contribuições, pendências, e ideias para trabalhos futuros.
-OBS: TODOS DEVEM PARTICIPAR, CONFERINDO PONTOS DE VISTA.
-TEMPO: +/- 15min
+[Apresentação - Jogo da Memória](./src/imagens/Apresenta%C3%A7%C3%A3o%20Paradigmas-20220703_215938-Meeting%20Recording.mp4)
 
 ## Participações
 Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
@@ -128,6 +115,9 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 
 ## Outros 
 ### I. Lições Aprendidas
+- Usar system.random
+- Recursão
+- Tratar todas as possíveis entradas com guarded ou if e else
 
 ### II. Percepções
 Uma das maiores percepções obtidas pela equipe ao longo da execução deste trabalho foi a modularização possibilitada pelo Paradigma Funcional, principalmente pelo Haskell. Todo o trabalho foi divido em módulos que compõem o jogo da memória. Estes módulos puderam ser trabalhados em paralelo para depois serem amarrados a fim de termos um jogo em plena funcionalidade. 
