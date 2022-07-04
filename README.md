@@ -119,7 +119,7 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 | ----- | ------------ | ------------------------------------------------------------------------------ |
 | Felipe | Programação das Cartas, Tabuleiro e Finalização do trabalho    |  Excelente |
 | Gabriela | Programação da Pontuação, ajustes e Finalização do trabalho | Excelente|
-| Giovana | Programação dos Jogadores e Finalização do README | Excelente |
+| Giovana | Programação dos Jogadores e Finalização do trabalho | Excelente |
 | Giovanna | Programação das Cartas, Tabuleiro e Finalização do trabalho    |  Excelente |
 | Giulia | Programação das Dificuldades e Finalização do trabalho   |  Excelente  |
 | Hérya | Programação dos Jogadores e Finalização do trabalho   |  Excelente  |
