@@ -1,37 +1,37 @@
-module Carta.Carta
-  ( geraBaralho,
-    Carta,
-    getValue,
-    isEscondido,
-    isEncontrado,
-    atualizaBaralho,
-    atualizaAchadoNoBaralho,
+module Carta.Carta(
+    geraBaralho
+    ,Carta
+    ,getValor
+    ,getIsEscondido
+    ,getIsEncontrado
+    ,atualizaBaralho
+    ,atualizaAchadoNoBaralho
   )
 where
 
-data Carta = Carta
-  { valor :: Int,
-    escondido :: Bool,
-    encontrado :: Bool
+data Carta = Carta{ 
+  valor :: Int,
+  escondido :: Bool,
+  encontrado :: Bool
   }
   deriving (Show)
 
+getValor :: Carta -> Int
+getValor Carta {valor = valor} = valor
+
+getIsEncontrado :: Carta -> Bool
+getIsEncontrado Carta {encontrado = encontrado} = encontrado
+
+getIsEscondido :: Carta -> Bool
+getIsEscondido Carta {escondido = escondido} = escondido
+
 viraCarta :: Carta -> Carta
 viraCarta c = do
-  geraCarta (getValue c) (not (isEscondido c)) (isEncontrado c) 
+  geraCarta (getValor c) (not (getIsEscondido c)) (getIsEncontrado c)
 
 achaCarta :: Carta -> Carta
 achaCarta c = do
-  geraCarta (getValue c) (isEscondido c) (not (isEncontrado c))
-
-getValue :: Carta -> Int
-getValue = valor
-
-isEscondido:: Carta -> Bool
-isEscondido = escondido
-
-isEncontrado :: Carta -> Bool
-isEncontrado = encontrado
+  geraCarta (getValor c) (getIsEscondido c) (not (getIsEncontrado c))
 
 geraCarta :: Int -> Bool -> Bool -> Carta
 geraCarta valor escondido encontrado = do

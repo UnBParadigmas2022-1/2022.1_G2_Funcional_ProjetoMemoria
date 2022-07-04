@@ -1,39 +1,35 @@
-module Tabuleiro.Tabuleiro
-  ( geraTabuleiro,
-    desenhaTabuleiro,
-    pegaCoordenada,
-    achaCartaNoTabuleiro,
-    pegaCarta,
-    Coordenada,
-    getX,
-    getY
+module Tabuleiro.Tabuleiro(
+    geraTabuleiro
+    ,desenhaTabuleiro
+    ,pegaCoordenada
+    ,achaCartaNoTabuleiro
+    ,pegaCarta
+    ,Coordenada
+    ,getX
+    ,getY
   )
 where
 import System.Random (newStdGen, StdGen, randoms)
 import Carta.Carta (
     Carta
-    ,isEncontrado
-    ,isEscondido
-    ,getValue
+    ,getIsEncontrado
+    ,getIsEscondido
+    ,getValor
     ,atualizaBaralho
     ,atualizaAchadoNoBaralho
     )
-import Data.Char(
-    toUpper
-    ,digitToInt
-    ,ord
-    ,chr
-    )
+
 import Data.Binary.Put (putInt8)
 import Data.Char
-  ( chr,
-    digitToInt,
-    ord,
-    toUpper,
+  (
+    chr
+    ,digitToInt
+    ,ord
+    ,toUpper
   )
 
-data Coordenada = Coordenada
-  { x :: Int,
+data Coordenada = Coordenada{
+    x :: Int,
     y :: Int
   }
   deriving (Show)
@@ -45,12 +41,12 @@ getY :: Coordenada -> Int
 getY = y
 
 embaralhaCarta :: StdGen -> [Carta] -> [Carta]
-embaralhaCarta g xs = embaralha' (randoms g) xs
+embaralhaCarta g = embaralha' (randoms g)
 
 embaralha' :: [Int] -> [Carta] -> [Carta]
 embaralha'  _ [] = []
 embaralha' (i:is) xs = let (firsts, rest) = splitAt (i `mod` length xs) xs
-                     in (head rest) : embaralha' is (firsts ++ tail rest)
+                     in head rest : embaralha' is (firsts ++ tail rest)
 
 geraTabuleiro :: StdGen -> Int -> [Carta] -> [[Carta]]
 geraTabuleiro gen n baralho = do
@@ -58,19 +54,19 @@ geraTabuleiro gen n baralho = do
     if length embaralhado == n
         then do [embaralhado]
     else
-        [take n embaralhado] ++ geraTabuleiro gen n (drop n embaralhado)
+        take n embaralhado : geraTabuleiro gen n (drop n embaralhado)
 
 printCarta :: Carta -> IO ()
 printCarta carta = do
   let c = carta :: Carta
-  if not (isEncontrado c)
+  if not (getIsEncontrado c)
     then do
-      if isEscondido c
+      if getIsEscondido c
         then do
-           putStr " *"
+          putStr " *"
       else do
           putStr " "
-          putStr . unwords . map show $ [getValue c]
+          putStr . unwords . map show $ [getValor c]
   else putStr " -"
 
 printLinha :: Int -> [[Carta]] -> IO ()
