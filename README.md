@@ -133,11 +133,16 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 Uma das maiores percepções obtidas pela equipe ao longo da execução deste trabalho foi a modularização possibilitada pelo Paradigma Funcional, principalmente pelo Haskell. Todo o trabalho foi divido em módulos que compõem o jogo da memória. Estes módulos puderam ser trabalhados em paralelo para depois serem amarrados a fim de termos um jogo em plena funcionalidade. 
 
 ### III. Contribuições e Fragilidades
+Para a elaboração deste trabalho, a equipe utilizou somente uma biblioteca externa e nenhum código de terceiros. Desta forma, o jogo implementado é, quase que integralmente, resultado do trabalho dos membros. Assim, é possível perceber um trabaho com lógica própria, baseado nos conhecimentos que a equipe obteve ao longo deste módulo da disciplina.  
+
+Entretanto, ainda são notadas algumas fragilidades no projeto. A primeira delas, e que pode ser considerada como um possível trabalho posterior, é o tratamento das exceções. Ao receber dados diferentes do que é esperado pelo jogo, o programa quebra. Utilizando mecanismos para tratamentos de erros, é possível eliminar esta fragilidade. Outra fragilidade, que afeta a jogabilidade do projeto, é o fato do terminal mostrar os resultados das rodadas ao longo da execução do jogo. Desta forma, é possível que os jogadores burlem o propósito do jogo da memória, que é justamente memorizar as cartas. 
 
 ### IV. Trabalhos Futuros
 A equipe elenca duas notáveis possibilidades de futuros trabalhos em cima do atual jogo:
   * Implementação de interface gráfica, tornando o jogo mais lúdico e de fácil utilização;
-  * Possiblitar partidas com mais de dois jogadores, aumentando o nível de entretenimento do jogo. 
+  * Possiblitar partidas com mais de dois jogadores, aumentando o nível de entretenimento do jogo.  
+  
+Além disso, a correção das fragilidades elencadas no tópico anterior também configuram possíveis trabalhos futuros para este projeto. 
 
 ## Fontes
 - Videoaulas e materiais de estudo disponibilizados pela professora Milene Serrano.
