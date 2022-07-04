@@ -61,13 +61,17 @@ main
 ## Uso 
 1. Depois que o projeto começar a rodar, irá aparecer o menu indicando as instruções para iniciar o jogo:<br><br>
 <figure>
-  <img src="./src/imagens/menu.png" alt="Minha Figura">
+  <img src="./src/imagens/menu_inicial.jpeg" alt="Minha Figura">
   <figcaption>Menu</figcaption>
 </figure><br><br>
 2. É possível escolher a opção **1**, a qual iniciará o jogo e mostrará novas instruções para identificação do jogador (Após o primeiro jogador ser identificado é possível inserir mais um jogador no jogo, porém essa é uma ação opcional) ou a opção **2**, a qual irá finalizar a aplicação:<br><br>
 <figure>
-  <img src="./src/imagens/identificacao_jogadores.png" alt="Minha Figura">
-  <figcaption>Identificação dos jogadores</figcaption>
+  <img src="./src/imagens/jogadores.jpeg" alt="Minha Figura">
+  <figcaption>Número de jogadores</figcaption>
+</figure><br><br>
+<figure>
+  <img src="./src/imagens/identificacao_jogadores.jpeg" alt="Minha Figura">
+  <figcaption>Identificação dos Jogadores</figcaption>
 </figure><br><br>
 <figure>
   <img src="./src/imagens/saindo.png" alt="Minha Figura">
@@ -75,25 +79,21 @@ main
 </figure><br><br>
 3. Depois que todos os jogadores são identificados, são mostrados os níveis de dificuldade do jogo (Neste momento também é possível sair do jogo):<br><br>
 <figure>
-  <img src="./src/imagens/niveis_dificuldade.png" alt="Minha Figura">
+  <img src="./src/imagens/dificuldades.png" alt="Minha Figura">
   <figcaption>Dificuldades</figcaption>
 </figure><br><br>
 4. Após escolher um nível de dificuldade, o jogo de fato começa. O tabuleiro é representado por linhas de letras e colunas de números e cada carta (representada por um ' * ' ) é localizada pelo par de uma letra com um número (e.g. A1, B2, B4). Em cada rodada (de cada jogador), o jogador escolhe duas cartas e pode ver seus valores. Quando elas são iguais, a pontuação do jogador aumenta em +1 e as cartas viram novamente, mas trocando seu carácter de ' * ' para ' _ '. Caso contrário, o tabuleiro volta a apresentar o carácter ' * ' no lugar das cartas escolhidas e a pontuação não muda:<br><br>
 <figure>
-  <img src="./src/imagens/primeira_rodada.png" alt="Minha Figura">
+  <img src="./src/imagens/tabuleiro.jpeg" alt="Minha Figura">
   <figcaption>Primeira Rodada (Tabuleiro Original sem nenhum acerto)</figcaption>
 </figure><br><br>
 <figure>
-  <img src="./src/imagens/rodadas.png" alt="Minha Figura">
-  <figcaption>Rodada sem acerto</figcaption>
-</figure><br><br>
-<figure>
-  <img src="./src/imagens/acerto.png" alt="Minha Figura">
-  <figcaption>Rodada com acerto</figcaption>
+  <img src="./src/imagens/vitoria.png" alt="Minha Figura">
+  <figcaption>Rodada com e sem acertos</figcaption>
 </figure><br><br>
 5. Ao final do jogo, são mostradas informações como o número de pontos feitos pelo jogador vencedor e o nome dele:<br><br>
 <figure>
-  <img src="./src/imagens/fim_jogo.png" alt="Minha Figura">
+  <img src="./src/imagens/jogo.jpeg" alt="Minha Figura">
   <figcaption>Fim do Jogo</figcaption>
 </figure><br><br>
 
@@ -117,14 +117,14 @@ TEMPO: +/- 15min
 Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 | Aluno | Contribuição | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) |
 | ----- | ------------ | ------------------------------------------------------------------------------ |
-| Felipe Boccardi Silva Agustini | Programação dos Fatos da Base de Conhecimento Lógica | Boa |
-| Gabriela da Gama Pivetta |  |  |
-| Giovana Vitor Dionisio Santana |  Programação dos Fatos da Base de Conhecimento Lógica | Boa |
-| Giovanna Borges Bottino |  Programação dos Fatos da Base de Conhecimento Lógica | Boa |
-| Giulia Lobo Barros |  Programação dos Fatos da Base de Conhecimento Lógica | Boa |
-| Henrique Amorim Costa Melo |  Programação dos Fatos da Base de Conhecimento Lógica | Boa |
-| Hérya Rodrigues Alcantara |  Programação dos Fatos da Base de Conhecimento Lógica | Boa |
-| Murilo Gomes de Souza |  Programação dos Fatos da Base de Conhecimento Lógica | Boa |
+| Felipe | Programação das Cartas, Tabuleiro e Finalização do trabalho    |  Excelente |
+| Gabriela | Programação da Pontuação, ajustes e Finalização do trabalho | Excelente|
+| Giovana | Programação dos Jogadores e Finalização do README | Excelente |
+| Giovanna | Programação das Cartas, Tabuleiro e Finalização do trabalho    |  Excelente |
+| Giulia | Programação das Dificuldades e Finalização do trabalho   |  Excelente  |
+| Hérya | Programação dos Jogadores e Finalização do trabalho   |  Excelente  |
+| Henrique | Programação da Pontuação, ajustes e Finalização do trabalho | Excelente |
+| Murilo | Programação das Dificuldades e Finalização do trabalho   |  Excelente  |
 
 ## Outros 
 ### I. Lições Aprendidas
