@@ -98,7 +98,7 @@ main
 </figure><br><br>
 
 **Gif do fluxo completo:**<br>
-![gif_funcional](https://user-images.githubusercontent.com/54070461/177043169-30a3b363-bae0-4d5c-ad74-b07ed9692bb9.gif)
+![content](https://user-images.githubusercontent.com/54070461/177064767-e3d74da7-76e0-4069-97dc-d157dd02ee45.gif)
 
 
 
