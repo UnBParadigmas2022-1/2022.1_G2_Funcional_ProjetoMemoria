@@ -118,6 +118,7 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 - Usar system.random
 - Recursão
 - Tratar todas as possíveis entradas com guarded ou if e else
+- Linguagem Haskell
 
 ### II. Percepções
 Uma das maiores percepções obtidas pela equipe ao longo da execução deste trabalho foi a modularização possibilitada pelo Paradigma Funcional, principalmente pelo Haskell. Todo o trabalho foi divido em módulos que compõem o jogo da memória. Estes módulos puderam ser trabalhados em paralelo para depois serem amarrados a fim de termos um jogo em plena funcionalidade. 
