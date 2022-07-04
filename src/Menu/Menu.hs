@@ -74,7 +74,7 @@ escolheJogadores = do
       let jogador1 = geraJogador nomeJogador1 1 0
       putStrLn "--> Digite o nome do segundo jogador: "
       nomeJogador2 <- getLine
-      let jogador2 = geraJogador nomeJogador1 2 0
+      let jogador2 = geraJogador nomeJogador2 2 0
       escolheDificuldade (jogador1 : [jogador2])
   else do
     putStrLn "--> Escolha uma opcao valida"
